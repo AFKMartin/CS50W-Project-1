@@ -1,0 +1,36 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Create New page
+{% endblock %}
+
+{% block body %}
+
+<h1>Create New Entry</h1>
+
+{% if error %} <!-- Error message style -->
+    <div style="color: red; margin-bottom: 10px;">{{ error }}</div>
+{% endif %}
+
+<form action="{% url 'new' %}" method="post">
+    {% csrf_token %} <!-- for security -->
+
+    <!-- Title -->
+    <div class="form-group mb-3">
+        <label for="title" style="font-weight: bold;">Title:</label>
+        <input class="form-control" type="text" id="title" name="title" required>
+    </div>
+    
+    <!-- Content -->
+    <div class="form-group mb-3">
+        <label for="content" style="font-weight: bold;">Content:</label>
+        <textarea class="form-control" id="content" name="content" rows="8" required></textarea>
+    </div>
+
+    <!-- Submit Button -->
+    <button type="submit" class="btn btn-outline-primary mb-3">Save</button>
+</form>
+{% endblock %}
+
+
+

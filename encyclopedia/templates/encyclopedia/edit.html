@@ -1,0 +1,25 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+Edit {{ title }}
+{% endblock %}
+
+{% block body %}
+    <h1>Edit: {{ title }}</h1>
+    <!-- form for editing existing pages -->
+    <form action="{% url 'edit' title %}" method="post">
+        {% csrf_token %} <!-- Security token -->
+
+        <!-- content box to write KI: I can actually edit the title, should not be like that-->
+        <div class="form-group mb-3">
+            <label for="content">Content:</label>
+            <textarea class="form-control" id="contet" name="content" rows="8" required>{{ content }}</textarea>
+        </div>
+                
+        <br>
+
+        <!-- Save changes button -->
+        <button type="submit" class="btn btn-outline-primary mb-3">Save Changes</button>
+    </form>
+
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    {{ title }}
+{% endblock %}
+
+{% block body %}
+    <!-- Edit this page "button" not technically a button but works fine  -->
+    <a href="{% url 'edit' title %}" class="btn btn-outline-primary mb-3">Edit this page</a>
+
+    <!-- converter from MD to HTML -->
+    <div>
+        {{ content|safe }}
+    </div>
+{% endblock %}
