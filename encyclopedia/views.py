@@ -46,9 +46,9 @@ def new_page(request):
                 "title": title,
                 "content": content
             })
-        formatted_content = f"# {title}\n\n{content}"
+        # formatted_content = f"# {title}\n\n{content}" yeah this is an issue
 
-        util.save_entry(title, formatted_content)
+        util.save_entry(title, content)
         return redirect("entry", title=title)
 
     return render(request, "encyclopedia/new.html")
@@ -60,14 +60,11 @@ def edit_entry(request, title):
     # Just in case, dunno when this could happend but just in case
     if content is None:
         raise Http404("Page not found")
-    
-    # Temporaly remove the title while editing
-    
+        
     if request.method == "POST":
         new_content = request.POST.get("content", "").strip()
-        # Always prepend the md title
-        full_content = f"# {title}\n{new_content}"
-        util.save_entry(title, full_content)
+        # full_content = f"# {title}\n{new_content}" yeah lets not do that for now
+        util.save_entry(title, new_content)
         return redirect("entry", title=title)
     
     return render(request, "encyclopedia/edit.html", {

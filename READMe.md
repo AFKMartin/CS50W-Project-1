@@ -25,14 +25,14 @@
 - [x] When the form is submitted:  
   - [x] If an entry with the provided title already exists, show an **error message** instead of overwriting it.  
   - [x] Otherwise, save the new entry and redirect the user to the new entry’s page.  
-  - [ ] Make the submit buton nice and the content box smaller
+  - [x] Make the submit buton nice and the content box smaller
 ---
 ### Edit
-- [ ] Each entry page should have a link to **edit** the entry.  
-- [ ] Clicking that link takes the user to a page with a textarea pre-populated with the entry’s existing Markdown content.  
-- [ ] The user can edit the content and click a button to **save** their changes.  
-- [ ] Upon saving, the entry should be updated and the user redirected back to the entry page.  
-- [ ] title should NOT be editable after creating the post
+- [x] Each entry page should have a link to **edit** the entry.  
+- [x] Clicking that link takes the user to a page with a textarea pre-populated with the entry’s existing Markdown content.  
+- [x] The user can edit the content and click a button to **save** their changes.  
+- [x] Upon saving, the entry should be updated and the user redirected back to the entry page.  
+- [x] title should NOT be editable after creating the post
 
 ---
 ### Random
