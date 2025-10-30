@@ -36,13 +36,13 @@
 
 ---
 ### Random
-- [ ] Clicking **“Random Page”** in the sidebar should take the user to a random encyclopedia entry.  
+- [x] Clicking **“Random Page”** in the sidebar should take the user to a random encyclopedia entry.  
 
 ---
 ### Extra
-- [ ] On each entry page, the Markdown content should be **converted to HTML** before being displayed.  
-- [ ] Use the `markdown2` Python package (`pip install markdown2`) to perform the conversion.  
+- [x] On each entry page, the Markdown content should be **converted to HTML** before being displayed.  
+- [x] Use the `markdown2` Python package (`pip install markdown2`) to perform the conversion.  
 
 **Challenge (optional):**  
-- [ ] Implement your own Markdown → HTML converter without using external libraries.  
+- [x] Implement your own Markdown → HTML converter without using external libraries.  
   - Support headings, bold text, unordered lists, links, and paragraphs.  

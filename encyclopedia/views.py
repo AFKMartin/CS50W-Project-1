@@ -1,7 +1,10 @@
 from django.shortcuts import render, redirect
-from django.http import Http404
+from django.http import Http404, HttpResponseRedirect
 from . import util
-import markdown2
+from .util import markdown_to_html
+# import markdown2
+import random
+from django.urls import reverse
 
 def index(request):
     return render(request, "encyclopedia/index.html", {
@@ -11,7 +14,7 @@ def index(request):
 def entry(request, title):
     content = util.get_entry(title)
     if content:
-        html_content = markdown2.markdown(content) # this converts the MD to HTML
+        html_content = markdown_to_html(content) # this converts the MD to HTML
         return render(request, "encyclopedia/entry.html", {
             "title": title,       
             "content": html_content
@@ -71,17 +74,12 @@ def edit_entry(request, title):
         "title": title,
         "content": content
     })
+
+def random_page(request):
+    entries = util.list_entries() 
+    if not entries:
+        raise Http404("No entries available") # In case there is no entries
     
-    
+    title = random.choice(entries) 
 
-
-
-
-
-
-
-
-
-
-
-
+    return HttpResponseRedirect(reverse("entry", args=[title]))
