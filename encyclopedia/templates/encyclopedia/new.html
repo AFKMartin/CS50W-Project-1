@@ -12,7 +12,7 @@
     <div style="color: red; margin-bottom: 10px;">{{ error }}</div>
 {% endif %}
 
-<form action="{% url 'new' %}" method="post">
+<form action="{% url 'new' %}" method="post" class="edit-form">
     {% csrf_token %} <!-- for security -->
 
     <!-- Title -->
@@ -28,7 +28,7 @@
     </div>
 
     <!-- Submit Button -->
-    <button type="submit" class="btn btn-outline-primary mb-3">Save</button>
+    <button type="submit" class="btn btn-outline-primary mb-3"><strong>Save</strogn></button>
 </form>
 {% endblock %}
 

@@ -36,3 +36,17 @@ textarea {
 .sidebar h2 {
     margin-top: 5px;
 }
+
+.edit-form {
+    max-width: 1500px auto;     
+    margin: 40px auto;    
+    padding: 20px;        
+    background-color: #fff;
+    border-radius: 10px;  
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.edit-form textarea {
+    height: 400px;
+    width: 100%;
+}
