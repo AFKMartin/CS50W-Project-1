@@ -11,7 +11,10 @@
     <body>
         <div class="row">
             <div class="sidebar col-lg-2 col-md-3">
-                <h2>Wiki</h2>
+                <!-- edX Logo -->
+                <img src="{% static 'encyclopedia/logo.png' %}" alt="Logo" class="img-fluid mb-2">
+
+                <h2>edX Wiki</h2>
                 <!-- Link of search with a get method -->
                 <form action="{% url 'search' %}" method="get">
                     <input class="search" type="text" name="q" placeholder="Search encyclopedia">
